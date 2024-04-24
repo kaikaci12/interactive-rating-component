@@ -7,13 +7,73 @@
     --black-gradient,
     radial-gradient(98.96% 98.96% at 50% 0%, #232a34 0%, #181e27 100%)
   );
+  width: 412px;
 }
+.oval,
 .star-container {
+  cursor: pointer;
+  transition: 300ms;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 48px;
   height: 48px;
-  fill: var(--Dark-Blue, #262e38);
+  background: var(--Dark-Blue, #262e38);
   border-radius: 33px;
+}
+.description {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+h2 {
+  color: var(--Pure-White, #fff);
+  font-size: 28px;
+  font-weight: 700;
+}
+.description p {
+  color: var(--Light-Grey, #969fad);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.rating-scale {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.rating-scale div:hover {
+  background: var(--Orange, #fc7614);
+}
+.oval span {
+  color: var(--Medium-Gray, #7c8798);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+.rating-scale div:hover,
+.oval span:hover {
+  color: white;
+}
+.submit {
+  all: unset;
+  margin-top: 32px;
+  cursor: pointer;
+  transition: 300ms;
+  padding: 11px 138px;
+  border-radius: 22.5px;
+  background: var(--Orange, #fc7614);
+  color: var(--Pure-White, #fff);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.submit:hover {
+  background: var(--Pure-White, #fff);
+  color: var(--Orange, #fc7614);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }

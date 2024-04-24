@@ -3,7 +3,7 @@ import "./RateWindow.css";
 function RateWindow(props) {
   return (
     <div className="rate-container">
-      <div className="star-container">
+      <div className="star-container oval">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="17"
@@ -24,6 +24,24 @@ function RateWindow(props) {
           is appreciated to help us improve our offering!
         </p>
       </div>
+      <div className="rating-scale">
+        <div className="1 oval">
+          <span>1</span>
+        </div>
+        <div className="2 oval">
+          <span>2</span>
+        </div>
+        <div className="3 oval">
+          <span>3</span>
+        </div>
+        <div className="4 oval">
+          <span>4</span>
+        </div>
+        <div className="5 oval">
+          <span>5</span>
+        </div>
+      </div>
+      <button className="submit">SUBMIT</button>
     </div>
   );
 }
