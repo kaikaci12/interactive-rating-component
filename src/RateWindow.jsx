@@ -1,10 +1,9 @@
 import "./RateWindow.css";
-import { useState } from "react";
 
-function RateWindow(props) {
-  const rateNumber = props.rateNumber;
-  const [clickedButton, setClickedButton] = useState(null);
-  props.clickedButton = clickedButton;
+function RateWindow({ clickedButton, setClickedButton, setSubmited }) {
+  console.log(clickedButton);
+  const ratingArr = [1, 2, 3, 4, 5];
+
   return (
     <div className="rate-container">
       <div className="star-container ">
@@ -21,6 +20,7 @@ function RateWindow(props) {
           />
         </svg>
       </div>
+
       <div className="description">
         <h2>How did we do?</h2>
         <p>
@@ -29,38 +29,24 @@ function RateWindow(props) {
         </p>
       </div>
       <div className="rating-scale">
-        <button
-          className={`1 oval ${clickedButton === 1 ? "active" : ""}`}
-          onClick={() => setClickedButton(1)}
-        >
-          1
-        </button>
-        <button
-          className={`2 oval ${clickedButton === 2 ? "active" : ""}`}
-          onClick={() => setClickedButton(2)}
-        >
-          2
-        </button>
-        <button
-          className={`3 oval ${clickedButton === 3 ? "active" : ""}`}
-          onClick={() => setClickedButton(3)}
-        >
-          3
-        </button>
-        <button
-          className={`4 oval ${clickedButton === 4 ? "active" : ""}`}
-          onClick={() => setClickedButton(4)}
-        >
-          4
-        </button>
-        <button
-          className={`5 oval ${clickedButton === 5 ? "active" : ""}`}
-          onClick={() => setClickedButton(5)}
-        >
-          5
-        </button>
+        {ratingArr.map((rating) => {
+          return (
+            <button
+              key={rating}
+              className={`oval ${clickedButton === rating ? "active" : ""}`}
+              onClick={() => setClickedButton(rating)}
+            >
+              {rating}
+            </button>
+          );
+        })}
       </div>
-      <button className="submit" onClick={() => {}}>
+      <button
+        className="submit"
+        onClick={() => {
+          setSubmited(true);
+        }}
+      >
         SUBMIT
       </button>
     </div>
