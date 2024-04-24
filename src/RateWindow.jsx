@@ -1,9 +1,13 @@
 import "./RateWindow.css";
+import { useState } from "react";
 
 function RateWindow(props) {
+  const rateNumber = props.rateNumber;
+  const [clickedButton, setClickedButton] = useState(null);
+  props.clickedButton = clickedButton;
   return (
     <div className="rate-container">
-      <div className="star-container oval">
+      <div className="star-container ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="17"
@@ -25,24 +29,42 @@ function RateWindow(props) {
         </p>
       </div>
       <div className="rating-scale">
-        <div className="1 oval">
-          <span>1</span>
-        </div>
-        <div className="2 oval">
-          <span>2</span>
-        </div>
-        <div className="3 oval">
-          <span>3</span>
-        </div>
-        <div className="4 oval">
-          <span>4</span>
-        </div>
-        <div className="5 oval">
-          <span>5</span>
-        </div>
+        <button
+          className={`1 oval ${clickedButton === 1 ? "active" : ""}`}
+          onClick={() => setClickedButton(1)}
+        >
+          1
+        </button>
+        <button
+          className={`2 oval ${clickedButton === 2 ? "active" : ""}`}
+          onClick={() => setClickedButton(2)}
+        >
+          2
+        </button>
+        <button
+          className={`3 oval ${clickedButton === 3 ? "active" : ""}`}
+          onClick={() => setClickedButton(3)}
+        >
+          3
+        </button>
+        <button
+          className={`4 oval ${clickedButton === 4 ? "active" : ""}`}
+          onClick={() => setClickedButton(4)}
+        >
+          4
+        </button>
+        <button
+          className={`5 oval ${clickedButton === 5 ? "active" : ""}`}
+          onClick={() => setClickedButton(5)}
+        >
+          5
+        </button>
       </div>
-      <button className="submit">SUBMIT</button>
+      <button className="submit" onClick={() => {}}>
+        SUBMIT
+      </button>
     </div>
   );
 }
+
 export default RateWindow;
